@@ -1,0 +1,204 @@
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: white;
+}
+
+.topSection {
+    background-color: #1C1C1C;
+    height: 60vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.15); /* transparent white */
+    backdrop-filter: blur(10px); /* blur behind */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    padding: 20px;
+    height: 80px;
+    width: 80px;
+    border-radius: 60px;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: capitalize;
+    position: relative;
+    top: 25%;
+}
+
+.logo::before,
+.buttons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.25); /* light glass fill */
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    z-index: -1;
+    transition: left 0.3s ease;
+}
+
+.logo:hover::before,
+.buttons:hover::before {
+    left: 0;
+}
+
+/* Optional: text turns dark when background fills */
+.logo:hover  span{
+    color: #000;
+}
+
+
+.brand {
+    background-color: #C9CE70;
+    border-radius: 20px;
+    padding: 10px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgb(215, 215, 215);
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+    color: black;
+}
+
+.brand:hover {
+    transform: translateY(-10px) translateZ(-2px);
+}
+
+.bars {
+    display: grid;
+    cursor: pointer;
+    position: relative;
+    right: 20px;
+    top: -10px;
+}
+
+.bars span {
+    font-size: 65px;
+    background-color: white;
+    height: 10px;
+    width: 60px;
+    border-radius: 3px;
+    margin: 5px 0;
+    transition: all 0.5s ease;
+}
+
+.bars:hover span {
+    background-color: #C9CE70;
+}
+
+
+.bars:hover span:nth-child(1) {
+    transform: translateX(-25px);
+}
+.bars:hover span:nth-child(2) {
+    transform: translateX(-15px);
+}
+.bars:hover span:nth-child(3) {
+    transform: translateX(-10px);
+}
+
+.NavContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    z-index: 50;
+    text-align: justify;
+    overflow: hidden;
+    transform: translateX(100%);
+    transition: transform 0.5s ease;
+}
+
+.NavContainer.active {
+    transform: translateX(0);
+
+}
+
+.NavContainer p {
+    position: absolute;
+    top: -90px;
+    right: 40px;
+    font-size: 90px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.NavContainer p:hover {
+    color: #C9CE70;
+}
+
+.NavContainer nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.NavContainer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.NavContainer nav ul li {
+    padding: 10px;
+}
+
+.NavContainer nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 40px;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.NavContainer nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: #C9CE70;
+    border-radius: 12px;
+    transition: width 0.3s ease;
+}
+
+.NavContainer nav ul li a:hover::before {
+    width: 100%;
+
+}
+
+
+.NavContainer nav ul li a:hover {
+    color: #C9CE70;
+}
+
