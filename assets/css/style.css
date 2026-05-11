@@ -13,6 +13,7 @@ header{
 }
 
 .topSection {
+    height: 100vh;
     width: 100%;
     overflow: hidden;
 }
@@ -242,5 +243,28 @@ header{
 
 .NavContainer nav ul li a:hover {
     color: #C9CE70;
+}
+
+/* Main Content*/
+
+.mainContent {
+    width: 100%;
+}
+
+.imgConv {
+    overflow: hidden;
+    height: 400px;
+    width: 600px;
+    border-radius: 30px;
+    position: relative;
+    top: 80px;
+    left: 55%;
+    filter: grayscale(100%) contrast(1.1);
+}
+
+.imgConv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
