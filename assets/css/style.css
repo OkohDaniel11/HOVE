@@ -1,5 +1,5 @@
 body {
-    background-color: #f2f2f2;
+    background: linear-gradient(90deg,rgba(5, 1, 1, 1) 0%, rgba(28, 28, 28, 1) 50%, rgba(28, 27, 27, 1) 100%);
     margin: 0;
     padding: 0;
 }
@@ -13,8 +13,6 @@ header{
 }
 
 .topSection {
-    background-color: #1C1C1C;
-    height: 60vh;
     width: 100%;
     overflow: hidden;
 }
@@ -29,9 +27,9 @@ header{
 
 .logo {
     padding: 20px;
-    height: 80px;
-    width: 80px;
-    border-radius: 60px;
+    height: 20px;
+    width: 100px;
+    border-radius: 20px;
     text-align: center;
     overflow: hidden;
     cursor: pointer;
@@ -39,11 +37,10 @@ header{
 
 .logo a {
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     text-decoration: none;
     text-transform: capitalize;
     position: relative;
-    top: 25%;
 }
 
 .logo::before,
@@ -54,11 +51,11 @@ header{
     left: -100%;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.25); /* light glass fill */
+    background: #a1a45f; /* light glass fill */
     backdrop-filter: blur(5px);
     border-radius: 12px;
     z-index: -1;
-    transition: left 0.3s ease;
+    transition: left 0.6s ease;
 }
 
 .logo:hover::before,
@@ -73,37 +70,57 @@ header{
 
 
 .brand {
-    background-color: #C9CE70;
+    background-color: #a9ad63;
     border-radius: 20px;
     padding: 10px;
-    width: 180px;
+    width: 100px;
+    height: 50px;
     text-align: center;
-    box-shadow: 0 8px 30px rgb(215, 215, 215);
+    box-shadow: 0 8px 30px rgb(31, 31, 31);
     text-transform: uppercase;
     transition: transform 0.3s ease;
     color: black;
+    position: relative;
+    right: 50px;
 }
 
 .brand:hover {
-    transform: translateY(-10px) translateZ(-2px);
+    transform: translateY(-8px) translateZ(-2px);
+    cursor: pointer;
+}
+
+.brand h1 {
+    color: white;
+    font-size: 20px;
 }
 
 .bars {
     display: grid;
     cursor: pointer;
     position: relative;
-    right: 20px;
+    right: 25px;
     top: -10px;
 }
 
 .bars span {
     font-size: 65px;
-    background-color: white;
-    height: 10px;
-    width: 60px;
+    background-color: #FAFAFA;
+    height: 3px;
+    width: 40px;
     border-radius: 3px;
     margin: 5px 0;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, width 0.7s ease-in-out, left 0.7s ease-in-out;
+}
+
+.bars span:nth-child(2) {
+    width: 30px;
+    position: relative;
+    left: 10px;
+}
+.bars span:nth-child(3) {
+    width: 20px;
+    position: relative;
+    left: 20px;
 }
 
 .bars:hover span {
@@ -112,13 +129,17 @@ header{
 
 
 .bars:hover span:nth-child(1) {
-    transform: translateX(-25px);
+    transform: translateX(-10px);
 }
 .bars:hover span:nth-child(2) {
     transform: translateX(-15px);
+    width: 40px;
+    left: 0;
 }
 .bars:hover span:nth-child(3) {
     transform: translateX(-10px);
+    width: 40px;
+    left: 0;
 }
 
 .NavContainer {
@@ -127,28 +148,48 @@ header{
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.747);
     z-index: 50;
     text-align: justify;
     overflow: hidden;
-    display: none;
-    opacity: 0;
-    transition: display 0.9s ease-in-out;
+    transform: translateY(-100%);
+    transition: transform 0.9s ease-in-out;
 }
 
 .NavContainer.active {
-    opacity: 1;
-    display: block;
+    transform: translateY(0);
+}
+
+.NavContainer.active ~ .bars {
+    display: none;
 }
 
 .NavContainer p {
     position: absolute;
-    top: -90px;
-    right: 40px;
-    font-size: 90px;
-    color: white;
+    top: 30%;
+    right: 45%;
+    font-size: 30px;
+    color: #FAFAFA;
     cursor: pointer;
     transition: color 0.3s ease;
+    text-align: center;
+}
+
+.NavContainer p::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #C9CE70;
+    border-radius: 12px;
+    transition: width 0.3s ease;
+}
+
+.NavContainer p:hover::before {
+    width: 100%;
+
 }
 
 .NavContainer p:hover {
@@ -173,9 +214,9 @@ header{
 }
 
 .NavContainer nav ul li a {
-    color: white;
+    color: #FAFAFA;
     text-decoration: none;
-    font-size: 40px;
+    font-size: 25px;
     text-transform: uppercase;
     position: relative;
     transition: color 0.3s ease;
@@ -187,7 +228,7 @@ header{
     bottom: -5px;
     left: 0;
     width: 0;
-    height: 5px;
+    height: 3px;
     background: #C9CE70;
     border-radius: 12px;
     transition: width 0.3s ease;
