@@ -268,3 +268,8 @@ header{
     object-fit: cover;
 }
 
+.mask {
+  mask-type: luminance; /* white = transparent, grays = semi-transparent, black = opaque */
+  mask-type: alpha; /* transparent areas of the image let image through, otherwise not */
+}
+
