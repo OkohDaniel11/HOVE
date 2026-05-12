@@ -1,8 +1,126 @@
 body {
-    background: linear-gradient(90deg,rgba(5, 1, 1, 1) 0%, rgba(28, 28, 28, 1) 50%, rgba(28, 27, 27, 1) 100%);
+    background: linear-gradient(
+        90deg,rgba(5, 1, 1, 1) 0%, 
+        rgba(28, 28, 28, 1) 50%, 
+        rgba(28, 27, 27, 1) 100%);
     margin: 0;
     padding: 0;
 }
+
+.medievalsharp-regular {
+    font-family: "MedievalSharp", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.barlow-thin {
+  font-family: "Barlow", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.barlow-extralight {
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.barlow-light {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.barlow-regular {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.barlow-medium {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.barlow-semibold {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.barlow-bold {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.barlow-extrabold {
+  font-family: "Barlow", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.barlow-black {
+  font-family: "Barlow", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.barlow-thin-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.barlow-extralight-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.barlow-light-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.barlow-regular-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.barlow-medium-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.barlow-semibold-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.barlow-bold-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.barlow-extrabold-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.barlow-black-italic {
+  font-family: "Barlow", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
 
 header{
     display: flex;
@@ -38,10 +156,13 @@ header{
 
 .logo a {
     color: white;
-    font-size: 20px;
+    font-size: 22px;
     text-decoration: none;
     text-transform: capitalize;
     position: relative;
+    top: -4px;
+    font-weight: 100;
+    font-family: "Barlow", cursive;
 }
 
 .logo::before,
@@ -91,8 +212,13 @@ header{
 }
 
 .brand h1 {
+    position: relative;
+    top: -8px;
     color: white;
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 100;
+    font-family: "Barlow", cursive;
+     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .bars {
@@ -110,7 +236,10 @@ header{
     width: 40px;
     border-radius: 3px;
     margin: 5px 0;
-    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, width 0.7s ease-in-out, left 0.7s ease-in-out;
+    transition: transform 0.5s ease-in-out, 
+                background-color 0.5s ease-in-out, 
+                width 0.7s ease-in-out, 
+                left 0.7s ease-in-out;
 }
 
 .bars span:nth-child(2) {
@@ -174,6 +303,8 @@ header{
     cursor: pointer;
     transition: color 0.3s ease;
     text-align: center;
+    font-weight: 100;
+    font-family: "Barlow", cursive;
 }
 
 .NavContainer p::before {
@@ -221,6 +352,8 @@ header{
     text-transform: uppercase;
     position: relative;
     transition: color 0.3s ease;
+    font-weight: 100;
+    font-family: "Barlow", cursive;
 }
 
 .NavContainer nav ul li a::before {
@@ -260,13 +393,22 @@ header{
     top: 80px;
     left: 55%;
     filter: grayscale(100%) contrast(1.1);
+     background-color: rgba(28, 28, 28, 0.35);
+     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .imgConv img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    mix-blend-mode: multiply;
+    opacity: 0.92;
+    filter: saturate(0.85) brightness(0.95);
 }
 
 
-
+.faded-image {
+  /* Requires -webkit prefix for most browsers */
+  -webkit-mask-image: radial-gradient(circle, black 80%, transparent 100%);
+  mask-image: radial-gradient(circle, black 80%, transparent 100%);
+}
