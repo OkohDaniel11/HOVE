@@ -395,6 +395,11 @@ header{
     right: 6%;
 }
 
+.boxHeader {
+    display: flex;
+    justify-content: center;
+}
+
 .boxHeader h1 {
     font-size: 140px;
     font-weight: 100;
@@ -442,6 +447,6 @@ header{
 .faded-image {
   /* Requires -webkit prefix for most browsers */
   -webkit-mask-image: radial-gradient(circle, black 50%, transparent 100%);
-  mask-image: radial-gradient(circle, black 50%, transparent 100%);
+  mask-image: radial-gradient(circle, black 50%, transparent 70%);
 }
 
