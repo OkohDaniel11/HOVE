@@ -382,19 +382,51 @@ header{
 
 .mainContent {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mainContent article {
+    width: 45%;
+    padding: 10px;
+    color: white;
+    text-align: justify;
+    position: relative;
+    right: 6%;
+}
+
+.boxHeader h1 {
+    font-size: 140px;
+    font-weight: 100;
+    font-family: "Barlow", cursive;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    top: 90px;
+}
+
+.boxHeader h1 span {
+    padding: 0;
+}
+
+
+.boxPara p{
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: 100;
+    font-family: "Barlow", cursive;
+    padding: 0;
 }
 
 .imgConv {
     overflow: hidden;
-    height: 400px;
+    height: 600px;
     width: 600px;
+    border: none;
     border-radius: 30px;
     position: relative;
-    top: 80px;
-    left: 55%;
     filter: grayscale(100%) contrast(1.1);
-     background-color: rgba(28, 28, 28, 0.35);
-     border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(28, 28, 28, 0.35);
 }
 
 .imgConv img {
@@ -409,6 +441,7 @@ header{
 
 .faded-image {
   /* Requires -webkit prefix for most browsers */
-  -webkit-mask-image: radial-gradient(circle, black 80%, transparent 100%);
-  mask-image: radial-gradient(circle, black 80%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle, black 50%, transparent 100%);
+  mask-image: radial-gradient(circle, black 50%, transparent 100%);
 }
+
