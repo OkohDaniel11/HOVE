@@ -397,7 +397,9 @@ header{
 
 .boxHeader {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
 }
 
 .boxHeader h1 {
@@ -414,6 +416,62 @@ header{
     padding: 0;
 }
 
+.boxHeader h1:hover {
+    cursor: pointer;
+
+}
+
+
+/* Arrow Core */
+.arrow {
+    width: 4vmin;
+    height: 4vmin;
+    box-sizing: border-box;
+    position: absolute;
+    left: 80%;
+    top: 78%;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+/* Arrow Parts */
+.arrow::before,
+.arrow::after {
+    content: '';
+    position: absolute;
+    top: -70%;
+    left: -1%;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: #fafafa;
+    transition: 0.2s ease;
+    display: block;
+    transform-origin: 100% 0;
+}
+
+.arrow::before {
+    border-width: 0.8vmin 0.8vmin 0 0;
+}
+
+.arrow::after {
+    border-width: 0 0.8vmin 0 0;
+    top: -62%;
+}
+
+/* Hover Effects */
+.arrow:hover::before {
+    border-color: purple;
+    transform: scale(1);
+}
+
+.arrow:hover::after {
+    transform: rotate(45deg);
+    border-color: purple;
+    height: 120%;
+    left: 1%;
+    top: -58%;
+}
 
 .boxPara p{
     font-size: 18px;
