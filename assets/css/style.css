@@ -410,6 +410,7 @@ header{
     overflow: hidden;
     position: relative;
     top: 90px;
+    transition: all 0.3s ease-in-out;
 }
 
 .boxHeader h1 span {
@@ -418,20 +419,37 @@ header{
 
 .boxHeader h1:hover {
     cursor: pointer;
-
+    color: #C9CE70;
 }
 
 
-/* Arrow Core */
-.arrow {
-    width: 4vmin;
-    height: 4vmin;
-    box-sizing: border-box;
+/* Container providing size and centering context */
+.arrowContain {
     position: absolute;
-    left: 80%;
-    top: 78%;
-    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vmin;
+    height: 8vmin;
+    background: #ffffff00; /* Dark background to make illumination pop */
     cursor: pointer;
+    overflow: hidden;
+    border-radius: 35px;
+    top: 265px;
+    left: 80%;
+}
+
+/* Base Arrow Core */
+.arrow {
+    width: 3vmin;
+    height: 3vmin;
+    box-sizing: border-box;
+    position: relative;
+    top: 7px;
+    right: 13px;
+    transform: rotateZ(45deg);
+    transition: transform 0.25s ease;
+    z-index: 2;
 }
 
 /* Arrow Parts */
@@ -459,20 +477,56 @@ header{
     top: -62%;
 }
 
-/* Hover Effects */
-.arrow:hover::before {
-    border-color: purple;
-    transform: scale(1);
+/* Illuminated Border Track */
+.arrowContain span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0.4vmin solid rgba(250, 250, 250, 0); /* Dim inactive border */
+    border-radius: inherit;
+    z-index: 1;
 }
 
-.arrow:hover::after {
+/* Illuminated Filling Glow Effect */
+.arrowContain span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0.4vmin solid #f8ff94;
+    border-radius: inherit;
+    box-shadow: 0 0 15px #dbdbdb, inset 0 0 15px #dcdcdc; /* Neon glow */
+    clip-path: inset(0 100% 0 0); /* Starts completely hidden */
+    transition: clip-path 0.4s ease-in-out;
+}
+
+/* Hover States combined to trigger simultaneously */
+.arrowContain:hover .arrow {
+    transform: scale(0.9) rotateZ(45deg);
+}
+
+.arrowContain:hover .arrow::before {
+    border-color: #C9CE70;
+}
+
+.arrowContain:hover .arrow::after {
     transform: rotate(45deg);
-    border-color: purple;
+    border-color: #C9CE70;
     height: 120%;
     left: 1%;
-    top: -58%;
+    top: -53%;
 }
 
+/* Triggers the fill animation on hover */
+.arrowContain:hover span::before {
+    clip-path: inset(0 0 0 0); /* Unveils the border from left to right */
+}
 .boxPara p{
     font-size: 18px;
     line-height: 1.6;
