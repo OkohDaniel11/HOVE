@@ -23,3 +23,20 @@ navLinks.forEach(link => {
         bars.classList.add('active');
     });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hrElement = document.getElementById("LineAnimate");
+    const titleHeading = document.querySelector(".boxHeader h1");
+    
+    // Check if the user has been here before
+    if (!localStorage.getItem("hasVisitedBefore")) {
+      // First time visit: Add the animation class
+      hrElement.classList.add("animate-line");
+      if (titleHeading) {
+        titleHeading.classList.add("fill-text");
+      }
+      // Set the flag so it won't animate on reload
+      localStorage.setItem("hasVisitedBefore", "true");
+    }
+    // If they have visited before, the class is ignored and the line displays instantly
+});

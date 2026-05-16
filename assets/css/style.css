@@ -403,14 +403,35 @@ header{
 }
 
 .boxHeader h1 {
-    font-size: 140px;
+    font-size: 130px;
     font-weight: 100;
     font-family: "Barlow", cursive;
+    height: 130px;
+}
+
+.boxHeader h1:nth-child(1) {
     padding: 0;
     overflow: hidden;
     position: relative;
     top: 90px;
-    transition: all 0.3s ease-in-out;
+    transition: color 1s ease-in-out;
+}
+
+.boxHeader h1:nth-child(2) {
+    position: relative;
+    bottom: 5px;
+    left: 0;
+    color: #ffffff;
+    opacity: 0.3;
+    transform: scaleY(-1);
+    filter: blur(2.5px);
+     /* Fades out the reflection */
+    opacity: 0.5; 
+    
+    /* Hides the top half, reveals only the bottom half with a fade */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 70%, black 100%);
+    mask-image: linear-gradient(to bottom, transparent 70%, black 100%);
+    pointer-events: none;
 }
 
 .boxHeader h1 span {
@@ -429,13 +450,12 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 15vmin;
+    width: 13vmin;
     height: 8vmin;
     background: #ffffff00; /* Dark background to make illumination pop */
     cursor: pointer;
     overflow: hidden;
-    border-radius: 35px;
-    top: 265px;
+    top: 250px;
     left: 80%;
 }
 
@@ -520,7 +540,7 @@ header{
     border-color: #C9CE70;
     height: 120%;
     left: 1%;
-    top: -53%;
+    top: -50%;
 }
 
 /* Triggers the fill animation on hover */
@@ -533,6 +553,8 @@ header{
     font-weight: 100;
     font-family: "Barlow", cursive;
     padding: 0;
+    position: relative;
+    bottom: 145px;
 }
 
 .imgConv {
@@ -555,6 +577,52 @@ header{
     filter: saturate(0.85) brightness(0.95);
 }
 
+hr {
+    position: relative;
+    bottom: 155px;
+    border: none;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fdfeff; /* Line color */
+    transform-origin: left;    /* Ensures animation starts from the left */
+    transform: scaleX(1); /* Default full width */
+    box-shadow: 0 0 18px rgba(253, 254, 255, 0.9),
+                0 0 28px rgba(201, 206, 112, 0.35);
+}
+
+hr.animate-line {
+    animation: fillLine 5s ease-out forwards; /* Runs only when the class is added */
+    box-shadow: 0 0 18px rgba(253, 254, 255, 0.9),
+                0 0 28px rgba(201, 206, 112, 0.35);
+}
+
+.boxHeader h1.fill-text {
+    color: transparent;
+    background-image: linear-gradient(90deg, #fdfeff 0%, #fdfeff 100%), linear-gradient(90deg, rgba(255,255,255,0.25), rgba(255,255,255,0.25));
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-size: 0% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    animation: fillText 5s ease-out forwards;
+}
+
+@keyframes fillLine {
+    0% {
+        transform: scaleX(0); /* Starts at zero width */
+    }
+    100% {
+        transform: scaleX(1); /* Expands to full width */
+    }
+}
+
+@keyframes fillText {
+    0% {
+        background-size: 0% 100%, 100% 100%;
+    }
+    100% {
+        background-size: 100% 100%, 100% 100%;
+    }
+}
 
 .faded-image {
   /* Requires -webkit prefix for most browsers */
