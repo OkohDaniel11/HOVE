@@ -674,11 +674,6 @@ hr.animate-line {
 
     .NavContainer p {
         left: 70%;
-        pointer-events: none;
-    }
-
-    .NavContainer nav ul li a {
-        pointer-events: none;
     }
 
     .mainContent article {
