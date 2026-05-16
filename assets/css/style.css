@@ -643,6 +643,7 @@ hr.animate-line {
         position: relative;
         right: 10px;
         bottom: 10px;
+        pointer-events: none;
     }
 
     .logo a {
@@ -658,6 +659,7 @@ hr.animate-line {
         position: relative;
         left: 1px;
         bottom: 8px;
+        pointer-events: none;
     }
 
     .brand h1 {
@@ -672,6 +674,11 @@ hr.animate-line {
 
     .NavContainer p {
         left: 70%;
+        pointer-events: none;
+    }
+
+    .NavContainer nav ul li a {
+        pointer-events: none;
     }
 
     .mainContent article {
@@ -687,14 +694,15 @@ hr.animate-line {
     .boxHeader h1 {
         font-size: 100px;
         left: 75px;
+        pointer-events: none;
     }
 
     .boxHeader h1:nth-child(1) {
-        top: 0;
+        top: 45px;
     }
 
     .boxHeader h1:nth-child(2) {
-        bottom: 130px;
+        bottom: 90px;
         left: 75px;
 
         /* Hides the top half, reveals only the bottom half with a fade */
@@ -711,7 +719,7 @@ hr.animate-line {
     }
 
     hr {
-        bottom: 235px;
+        bottom: 180px;
         width: 80%;
     }
 
@@ -721,7 +729,7 @@ hr.animate-line {
     }
 
     .boxPara p {
-        bottom: 230px;
+        bottom: 140px;
     }
 
 
